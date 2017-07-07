@@ -5,6 +5,6 @@ class Word
     @definitions = []
   end
   define_singleton_method(:all)do
-    @@definitions
+    @@words
   end
 end
