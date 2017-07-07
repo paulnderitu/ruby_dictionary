@@ -2,11 +2,11 @@
 
 
 <h2>Words in Dictionary:</h2>
-<ol class="word_list">
+<ul class="word_list">
   <% @all_words.each() do |word| %>
   <li><a href="/word/<%=word.id()%>"><%=word.get_word()%></a></li>
   <% end %>
-</ol>
+</ul>
 
 <h3>Add a word:</h3>
 <form action="/success" method="post">
