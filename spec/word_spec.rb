@@ -1,6 +1,12 @@
 require('rspec')
 require('word')
 
+describe('word')do
+  before()do
+    Word.clear
+  end
+end
+
 describe('.all')do
   it("shows all words pushed in the words array")do
     word1 = Word.new("cow")
@@ -14,14 +20,9 @@ describe('.all')do
     expect(Word.all()).to(eq([word1]))
   end
 end
-dwescribe(".clear")do
+describe(".clear")do
   it("emptys all the saved word instances")do
     expect(Word.clear()).to(eq([]))
   end
 end
 end
-
-# describe('.clear') do
-#  +    it("is empty at first") do
-#  +      expect(Word.clear()).to(eq([]))
-#  +    end
