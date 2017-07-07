@@ -4,4 +4,7 @@ class Word
   define_method(:initialize) do |attributes|
     @definitions = []
   end
+  define_singleton_method(:all)do
+    @@definitions
+  end
 end
