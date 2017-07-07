@@ -9,3 +9,11 @@ describe('.all')do
   expect(Definition.all()).to(eq([definition]))
   end
 end
+
+describe('#save')do
+  it("saves a definition")do
+    definition = Definition.new("a hairy pet")
+    definition.save()
+    expect(Definition.all()).to(eq([definition]))
+  end
+end
