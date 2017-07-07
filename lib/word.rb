@@ -14,4 +14,11 @@ class Word
     @@words.push(self)
   end
 
+  define_method(:add_definition)do |definition|
+  @definitions.push(definition)
+end
+define_method(:get_definition)do
+@definitions
+end
+
 end
