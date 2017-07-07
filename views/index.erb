@@ -1,0 +1,17 @@
+<h1>Dictionary</h1>
+
+
+<h2>Words in Dictionary:</h2>
+<ol class="word_list">
+  <% @all_words.each() do |word| %>
+  <li><a href="/word/<%=word.id()%>"><%=word.get_word()%></a></li>
+  <% end %>
+</ol>
+
+<h3>Add a word:</h3>
+<form action="/success" method="post">
+  <label for="word">Would you like to add a new word</label>
+    <input id="word" name="word" type="text">
+
+  <button type="submit">Add!</button>
+</form>
