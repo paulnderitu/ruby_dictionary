@@ -2,6 +2,16 @@ require('rspec')
 require('word')
 require('definition')
 
+describe('Definition')do
+  before()do
+    Definition.clear()
+  end
+  describe('.clear')do
+    it("ensures that the definition is empty at first")do
+      expect(Definition.clear()).to(eq([]))
+    end
+  end
+
 describe('.all')do
   it("shows all words' definitions")do
   definition = Definition.new("a farm animal")
@@ -16,4 +26,6 @@ describe('#save')do
     definition.save()
     expect(Definition.all()).to(eq([definition]))
   end
+end
+
 end
