@@ -20,15 +20,6 @@ post('/success') do
   erb(:success)
 end
 
-get('/word')do
-  erb(:word)
-end
-
-get('/word/:word')do
-  @word = word
-  erb(:word)
-end
-
 get('/word/:id') do
   @word = Word.find(params.fetch('id'))
   @all_definitions = @word.get_definitions()
