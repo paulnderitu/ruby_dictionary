@@ -63,7 +63,10 @@ describe('#add_definition')do
     definition1 = Definition.new("Your foot wear.")
     definition1.save()
     word1.add_definition(definition1)
-    expect(word1.get_definition()).to(eq([definition1]))
+    definition2 = Definition.new("really")
+    definition2.save()
+    word1.add_definition(definition2)
+    expect(word1.get_definitions()).to(eq(["Your foot wear.", "really"]))
   end
 end
 
