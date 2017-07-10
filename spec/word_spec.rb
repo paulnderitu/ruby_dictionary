@@ -3,7 +3,7 @@ require('word')
 require('definition')
 
 describe('word')do
-  before()do
+  before() do
     Word.clear()
   end
 
@@ -29,11 +29,30 @@ describe('.all')do
   end
 end
 
+describe('#id')do
+  it("displays all words")do
+    word1 = Word.new("sugar")
+    word1.save()
+    word2 = Word.new("cream")
+    word2.save()
+    expect(word1.id()).to(eq(1))
+    expect(word2.id()).to(eq(2))
+  end
+end
+
 describe('#get_word')do
   it("gets string input from word object")do
     word = Word.new("house")
     word.save()
     expect(word.get_word).to(eq("house"))
+  end
+end
+
+describe('find')do
+  it("finds word object from name by word id")do
+    word = Word.new("chicken")
+    word.save()
+    expect(Word.find(word.id())).to(eq(word))
   end
 end
 
